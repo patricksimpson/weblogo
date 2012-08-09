@@ -1,5 +1,4 @@
-WebLogo 
-###
+######WebLogo 
 
 A Project by Patrick Simpson
 
