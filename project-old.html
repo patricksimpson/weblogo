@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+  
+  <title>WebLogo: Untitled Project</title>
+  <link href="static/css/style.css" rel="stylesheet">
+  
+  <script src="vendors/modernizr-2.0.6.min.js"></script>
+  </head>
+  <body>
+  <div class="wrapper">
+    <h1>WebLogo: <span class="project-title">Untitled Project</span></h1>
+    <div class="outputwrapper">
+    <div id="output" class="box">
+      <canvas id="turtle-canvas" height="455" width="630"></canvas>
+    </div>
+    <div class="resources">
+      <img src="static/img/turtle.png" id="turtle" class="hidden">
+    </div>
+    <div id="debugger" class="box">
+    </div>
+    </div>
+    <div class="control">
+      <form name="comp" id="comp">
+      <input type="button" name="runtop" class="run" value="run" onsubmit="return false;"><br>
+      <textarea name="source" id="source" rows="40" cols="40"></textarea><br>
+      <input type="button" name="runbottom" class="run" value="run">
+      </form>
+    </div>
+  </div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="vendors/jquery-1.7.1.min.js"><\/script>')</script>
+  <script src="vendors/paper.js"></script>
+  <script type="text/javascript" src="static/js/weblogo.js"></script>
+  <script type="text/javascript" src="static/js/driver.js"></script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+  
+  <title>WebLogo: Franklin University - Patrick Simpson - Capstone</title>
+  <link href="static/css/style.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Share:400,700,400italic' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+  <div class="wrapper home">
+    <header>
+    <h1 class="main">WebLogo</h1>
+    </header>
+    <nav>
+    <a href="index.html">Home</a> |
+    <a href="project.html">New Project</a> |
+    <a href="help.html" class="active">Help</a>
+    </nav>
+    <div class="content">
+        <h3>Help</h3>
+        <p>Example code:</p>
+        <p><textarea cols="30" rows="35">clearscreen
+setbackground black
+hideturtle
+
+setpencolor green
+setx 350
+sety 440
+forward 200
+
+:flowersize 50
+
+to square :n
+repeat 4 [ forward :n right 90 ]
+end
+
+to flower :n
+repeat 36 [ right 10 square :n ]
+end
+
+setpencolor red
+flower :flowersize
+
+penup
+setx 330
+sety 30
+
+showturtle
+ </textarea></p>
+    </div>
+  </div>
+  <footer>
+     Produced in 2012 by Patrick Simpson for <a href="http://www.cs.franklin.edu/" target="_blank" title="(Opens a new window)">Franklin University</a> CS Capstone. There is no Copyright. 
+  </footer>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="parser.js"></script>
+  </body>
+</html>

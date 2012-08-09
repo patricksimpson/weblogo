@@ -1,0 +1,56 @@
+#myCanvas{
+  background-color: #eee;
+  border: 1px solid #ccc;
+}
+.palette a, .tools span.color{
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  margin-right: 3px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+.palette a.red{
+  background-color: red;
+  color: red;
+}
+.palette a.blue{
+  background-color: blue;
+  color: blue;
+}
+.palette a.yellow{
+  background-color: yellow;
+  color: yellow;
+}
+.palette a.green{
+  background-color: green;
+  color: green;
+}
+.palette a.purple{
+  background-color: purple;
+  color: purple;
+}
+.palette a.black{
+  background-color: black;
+  color: black;
+}
+.palette a.white{
+  background-color: white;
+  color: white;
+}
+.palette a.gray{
+  background-color: gray;
+  color: gray;
+}
+.palette a.orange{
+  background-color: orange;
+  color: orange;
+}
+.palette a.teal{
+  background-color: teal;
+  color: teal;
+}
+.tools .active{
+  color: #000;
+  text-decoration: none;
+}

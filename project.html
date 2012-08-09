@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+  
+  <title>WebLogo: Untitled Project</title>
+  <link href="static/css/style.css" rel="stylesheet">
+  <link href="static/css/jqmodal.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Share:400,700,400italic' rel='stylesheet' type='text/css'>
+  <script src="vendors/modernizr-2.0.6.min.js"></script>
+  </head>
+  <body>
+  <div class="wrapper">
+    <h1>WebLogo: <span id="project-title">Untitled Project</span></h1>
+    <div class="outputwrapper">
+    <div id="output">
+     
+      <div id="loading" style="display: none;">Processing: <span class="complete">0% complete.</span> <img src="static/img/ajax-loader.gif"></div>
+      <label for="project-name">Project name:</label> <input type="text" name="project-name" id="project-name" value="">
+      <input type="button" name="save-project" id="save-project" value="Save">
+      <span class="options"><a href="index.html">Home</a> | <a href="project.html">New</a> | <a href="#" id="load-project">Load</a> |<a href="help.html">Help</a></span>
+      <h3>Output</h3>
+      <canvas id="turtle-canvas" height="455" width="630"></canvas>
+    </div>
+    <div class="resources">
+      <img src="static/img/turtle.png" id="turtle" class="hidden">
+    </div>
+    <h3 class="debuggertitle">Debugger</h3>Show:
+    <input type="checkbox" name="error" id="d-error" checked="checked"><label for="d-error">Errors</label>
+    <input type="checkbox" name="warn" id="d-warn" checked="checked"><label for="d-warn">Warnings</label>
+    <input type="checkbox" name="system" id="d-system" checked="checked"><label for="d-system">System</label>
+    <input type="checkbox" name="debug" id="d-debug" checked="checked"><label for="d-debug">Debug</label>
+    <div id="debugger" class="box">
+    </div>
+    </div>
+    <div class="control">
+      <form name="comp" id="comp">
+      <h3 class="sourcetitle">Source</h3>
+      <label for="speed">Speed:</label>
+      <select id="speed">
+        <option value="1" selected="selected">Fastest</option>
+        <option value="5">Faster</option>
+        <option value="50">Fast</option>
+        <option value="100">Medium</option>
+        <option value="300">Med. Slow</option>
+        <option value="500">Slow</option>
+        <option value="750">Slower</option>
+        <option value="1000">Slowest</option>
+        <option value="-1">Debug</option>
+        <option value="0">JS[FullSpeed]</option>
+      </select>
+      <input type="button" name="stoptop" class="button stop" value="Pause" disabled="disabled" onsubmit="return false;">
+      <input type="button" name="runtop" class="button run" value="Run">
+      <div id="highlighter">&nbsp;</div>
+      <textarea name="source" id="source"></textarea><br>
+      <input type="button" name="stopbottom" class="button stop" value="Pause" disabled="disabled" onsubmit="return false;">
+      <input type="button" name="runbottom" class="button run" value="Run">
+      <input type="checkbox" name="hlight" id="d-hlight" checked="checked"><label for="d-hlight">Line Highlighter</label>
+      </form>
+    </div>
+  </div>
+    <div class="jqmWindow" id="loading-dialog">
+        <a href="#" class="jqmClose">Close</a>
+        <h3>Load a Project</h3>
+        <div id="loading-text">
+            
+        </div>
+    </div>
+  <footer>
+     Produced in 2012 by Patrick Simpson for <a href="http://www.cs.franklin.edu/" target="_blank" title="(Opens a new window)">Franklin University</a> CS Capstone. There is no Copyright. 
+  </footer>
+  <script>window.jQuery || document.write('<script src="vendors/jquery-1.7.1.min.js"><\/script>')</script>
+  <script src="vendors/paper.js"></script>
+  <script type="text/javascript" src="static/js/jqmodal.js"></script>
+  <script type="text/javascript" src="static/js/wl.js"></script>
+  <script type="text/javascript" src="static/js/weblogo/wl.Error.js"></script>
+  <script type="text/javascript" src="static/js/weblogo/wl.Drawing.js"></script>
+  <script type="text/javascript" src="static/js/weblogo/wl.FileData.js"></script>
+  <script type="text/javascript" src="static/js/weblogo/wl.Interpreter.js"></script>
+  <script type="text/javascript" src="static/js/weblogo/wl.Parser.js"></script>
+  <script type="text/javascript" src="static/js/weblogo/wl.UI.js"></script>
+  <script type="text/javascript" src="static/js/driver.js"></script>
+  </body>
+</html>

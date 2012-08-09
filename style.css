@@ -1,0 +1,44 @@
+/* CSS Document */
+.wrapper{
+  width:960px;
+}
+.box{
+  border:1px solid #ccc;
+  padding:1em;
+}
+.outputwrapper{
+  float:right;
+  width:600px;
+  height:640px;
+  position: relative
+}
+#output{
+  margin-bottom: 100px;
+  height: 455px;
+  width: 100%;
+}
+#turtle{
+  position: absolute;
+  top: 222px;
+  left: 292px;
+}
+#debugger{
+  position: absolute;
+  bottom: 0px;
+  height: 100px;
+  overflow: scroll;
+  width: 100%;
+}
+#debugger p{
+  margin: 1px 0px;
+  padding: 1px 0px;
+}
+#debugger p.error{
+  background-color: #ee9999;
+}
+#debugger p.success{
+  background-color: #ee9999;
+}
+.control{
+  float:left;
+}
