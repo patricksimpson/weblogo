@@ -46,7 +46,7 @@ You must have 1 space after the [ and before the ].
 
 ##### Example Code
 
-rep 10 [ fd 5 ] 
+    rep 10 [ fd 5 ] 
 
 #### Functions
 * to (start of a function block)
@@ -54,24 +54,24 @@ rep 10 [ fd 5 ]
 
 ##### Example Code
 
-to someFunction 
-fd 1
-end
+    to someFunction 
+     fd 1
+    end
 
 someFunction   <--- Calls function
 
 OR
 
-to someFunctionTwo :n
-fd :n
-end
+    to someFunctionTwo :n
+     fd :n
+    end
 
 someFunctionTwo 2  <--- Calls function, passes in 2 for the :n variable. 
 
 #### Variables
 * ":" <-- colon.
 
-Example Code
+##### Example Code
 
-:somevar 5
+    :somevar 5
 
