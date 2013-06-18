@@ -18,8 +18,184 @@
     <a href="help.html" class="active">Help</a>
     </nav>
     <div class="content">
-        <h3>Help</h3>
-        <p>Example code:</p>
+        <h2>Help</h2>
+        <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h3>
+<a name="supported-commands" class="anchor" href="#supported-commands"><span class="octicon octicon-link"></span></a>Supported Commands</h3>
+
+<h4>
+<a name="movement" class="anchor" href="#movement"><span class="octicon octicon-link"></span></a>Movement</h4>
+
+<ul>
+<li>forward or fd
+
+<ul>
+<li>Moves the turtle (n) spaces forward, defaults to 1.</li>
+</ul>
+</li>
+<li>back or bk 
+
+<ul>
+<li>Moves the turtle (n) spaces backward, defaults to 1.</li>
+</ul>
+</li>
+<li>right or rt 
+
+<ul>
+<li>Moves the turtle (n) spaces right, defaults to 1.</li>
+</ul>
+</li>
+<li>left or lt 
+
+<ul>
+<li>Moves the turtle (n) spaces left, defaults to 1.</li>
+</ul>
+</li>
+<li>setx
+
+<ul>
+<li>Moves the turtle to the x coordinate.</li>
+</ul>
+</li>
+<li>sety
+
+<ul>
+<li>Moves the turtle to the y coordinate.</li>
+</ul>
+</li>
+</ul><h4>
+<a name="drawing" class="anchor" href="#drawing"><span class="octicon octicon-link"></span></a>Drawing</h4>
+
+<ul>
+<li>setpencolor or pc
+
+<ul>
+<li>Sets the pen color to the HEX color value or the supported colors.</li>
+<li>Supported Colors <a href="http://www.computerhope.com/htmcolor.htm">HTML COLORS</a>
+</li>
+</ul>
+</li>
+<li>setbackground or bkg
+
+<ul>
+<li>Sets the pen color to the HEX color value or the supported colors.</li>
+</ul>
+</li>
+<li>penup or pu
+
+<ul>
+<li>Drawing disabled, movement will not draw. </li>
+</ul>
+</li>
+<li>pendown or pd
+
+<ul>
+<li>Drawning enabled, movement will draw.</li>
+</ul>
+</li>
+<li>clearscreen or cs
+
+<ul>
+<li>Clear the canvas.</li>
+</ul>
+</li>
+</ul><h4>
+<a name="turtle" class="anchor" href="#turtle"><span class="octicon octicon-link"></span></a>Turtle</h4>
+
+<ul>
+<li>showturtle or st
+
+<ul>
+<li>Shows the turtle icon on the canvas.</li>
+</ul>
+</li>
+<li>hideturtle or ht
+
+<ul>
+<li>Hides the turtle icon on the canvas.</li>
+</ul>
+</li>
+</ul><h4>
+<a name="processing" class="anchor" href="#processing"><span class="octicon octicon-link"></span></a>Processing</h4>
+
+<ul>
+<li>stop
+
+<ul>
+<li>Program halt.</li>
+</ul>
+</li>
+</ul><h4>
+<a name="looping" class="anchor" href="#looping"><span class="octicon octicon-link"></span></a>Looping</h4>
+
+<ul>
+<li>repeat or rep</li>
+<li>[  (Repeat block start)</li>
+<li>] (Repeat block end) 
+
+<ul>
+<li>You must have 1 space after the [ and before the ]. </li>
+</ul>
+</li>
+</ul><h5>
+<a name="example-code" class="anchor" href="#example-code"><span class="octicon octicon-link"></span></a>Example Code</h5>
+
+<pre><code>rep 10 [ fd 5 ] 
+</code></pre>
+
+<h4>
+<a name="functions" class="anchor" href="#functions"><span class="octicon octicon-link"></span></a>Functions</h4>
+
+<ul>
+<li>to
+
+<ul>
+<li>start of a function block</li>
+</ul>
+</li>
+<li>end 
+
+<ul>
+<li>indicates the end of a function block</li>
+</ul>
+</li>
+</ul><h5>
+<a name="example-code-1" class="anchor" href="#example-code-1"><span class="octicon octicon-link"></span></a>Example Code</h5>
+
+<pre><code>to someFunction 
+ fd 1
+end
+</code></pre>
+
+<p>someFunction
+(Calls function, simple, no arguments passed in)</p>
+
+<p>OR</p>
+
+<pre><code>to someFunctionTwo :n
+ fd :n
+end
+</code></pre>
+
+<p>someFunctionTwo 2
+(Calls function, passes in 2 for the :n arguments.)</p>
+
+<h4>
+<a name="variables" class="anchor" href="#variables"><span class="octicon octicon-link"></span></a>Variables</h4>
+
+<ul>
+<li>":"
+
+<ul>
+<li>Just a colon, followed by the name of the variable, followed by the value.</li>
+</ul>
+</li>
+</ul><h5>
+<a name="example-code-2" class="anchor" href="#example-code-2"><span class="octicon octicon-link"></span></a>Example Code</h5>
+
+<pre><code>:somevar 5
+</code></pre></article> 
+        
+        <h3>Example code:</h3>
         <p><textarea cols="30" rows="35">clearscreen
 setbackground black
 hideturtle
