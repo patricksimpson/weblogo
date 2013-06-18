@@ -2,26 +2,40 @@
 
 #### Movement
 * forward or fd
-* back or bk
-* right or rt
-* left or lt
+* * Moves the turtle (n) spaces forward, defaults to 1.
+* back or bk 
+* * Moves the turtle (n) spaces backward, defaults to 1.
+* right or rt 
+* * Moves the turtle (n) spaces right, defaults to 1.
+* left or lt 
+* * Moves the turtle (n) spaces left, defaults to 1.
 * setx
+* * Moves the turtle to the x coordinate.
 * sety
+* * Moves the turtle to the y coordinate.
 
 #### Drawing
 * setpencolor or pc
+* * Sets the pen color to the HEX color value or the supported colors.
+* * Supported Colors [HTML COLORS](http://www.computerhope.com/htmcolor.htm)
 * setbackground or bkg
+* * Sets the pen color to the HEX color value or the supported colors.
 * penup or pu
+* * Drawing disabled, movement will not draw. 
 * pendown or pd
+* * Drawning enabled, movement will draw.
 * clearscreen or cs
+* * Clear the canvas.
 
 #### Turtle
 * showturtle or st
+* * Shows the turtle icon on the canvas.
 * hideturtle or ht
+* * Hides the turtle icon on the canvas.
 
 #### Processing ####
 * stop
-
+* * Program halt.
 
 #### Looping
 * repeat or rep
@@ -30,7 +44,7 @@
 
 You must have 1 space after the [ and before the ]. 
 
-Example
+##### Example Code
 
 rep 10 [ fd 5 ] 
 
@@ -38,7 +52,7 @@ rep 10 [ fd 5 ]
 * to (start of a function block)
 * end (indicates the end of a function block)
 
-Example Code
+##### Example Code
 
 to someFunction 
 fd 1
