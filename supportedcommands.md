@@ -59,7 +59,8 @@
      fd 1
     end
 
-someFunction   <--- Calls function
+someFunction
+(Calls function, simple, no arguments passed in)
 
 OR
 
@@ -67,7 +68,8 @@ OR
      fd :n
     end
 
-someFunctionTwo 2  <--- Calls function, passes in 2 for the :n variable. 
+someFunctionTwo 2
+(Calls function, passes in 2 for the :n arguments.)
 
 #### Variables
 * ":"
