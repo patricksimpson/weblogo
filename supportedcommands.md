@@ -11,6 +11,12 @@
 #### Looping
 * repeat or rep
 
+#### Functions
+* to
+*   start of a function block.
+* end
+*  indicates the end of a function block.
+
 #### Drawing
 * setpencolor or pc
 * setbackground or bkg
