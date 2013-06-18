@@ -8,10 +8,31 @@
 * setx
 * sety
 
+#### Drawing
+* setpencolor or pc
+* setbackground or bkg
+* penup or pu
+* pendown or pd
+* clearscreen or cs
+
+#### Turtle
+* showturtle or st
+* hideturtle or ht
+
+#### Processing ####
+* stop
+
+
 #### Looping
 * repeat or rep
 * [  (Repeat block start)
-* ] (Repeat block end)
+* ] (Repeat block end) 
+
+You must have 1 space after the [ and before the ]. 
+
+Example
+
+rep 10 [ fd 5 ] 
 
 #### Functions
 * to (start of a function block)
@@ -40,16 +61,3 @@ Example Code
 
 :somevar 5
 
-#### Drawing
-* setpencolor or pc
-* setbackground or bkg
-* penup or pu
-* pendown or pd
-* clearscreen or cs
-
-#### Turtle
-* showturtle or st
-* hideturtle or ht
-
-#### Processing ####
-* stop
