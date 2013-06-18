@@ -2,7 +2,7 @@
 
 #### Movement
 * forward or fd
-** Moves the turtle (n) spaces forward, defaults to 1.
+* * Moves the turtle (n) spaces forward, defaults to 1.
 * back or bk 
 ** Moves the turtle (n) spaces backward, defaults to 1.
 * right or rt 
