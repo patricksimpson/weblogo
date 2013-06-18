@@ -1,4 +1,4 @@
-=== Supported Commands
+### Supported Commands
 
 * forward or fd
 * back or bk
