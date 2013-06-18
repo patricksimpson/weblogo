@@ -135,9 +135,6 @@ wl.Interpreter.prototype.processCommand =  function(command){
           case "sety": 
             success = this.draw.sety(command.number);
           break;
-          case "sety": 
-            success = this.draw.setx(command.number);
-          break;
           case "setpencolor": case "pc":
             success = this.draw.setPenColor(command.color);
           break;
