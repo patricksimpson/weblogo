@@ -37,6 +37,23 @@
 * stop
     - Program halt.
 
+#### If statements
+* if
+    - If statements require a expression and a command bracket.
+    - if &arg (expression) &arg2 [commands]
+* Expressions 
+    - Supported expressions are: <, >, ==, !=
+
+##### Example code
+
+    if  :size > 30 [stop]
+    
+    if :size < :othersize [ fd 20 rt 20 ]
+    
+    if 10 == :othersize [ bk 20 ]
+    
+    if :something != somethingelse [ penup hideturtle setx 200 ]
+
 #### Looping
 * repeat or rep
 * [  (Repeat block start)
@@ -78,4 +95,12 @@ someFunctionTwo 2
 ##### Example Code
 
     :somevar 5
+    
+#### Comments
+* ";"
+*   - Just a semicolon, followed by comments. Only works per line.
+
+##### Example Code
+
+; This is a comment
 
