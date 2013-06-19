@@ -18,10 +18,12 @@
       <div id="loading" style="display: none;">Processing: <span class="complete">0% complete.</span> <img src="static/img/ajax-loader.gif"></div>
       <label for="project-name">Project name:</label> <input type="text" name="project-name" id="project-name" value="">
       <input type="button" name="save-project" id="save-project" value="Save">
-      <span class="options"><a href="index.html">Home</a> | <a href="project.html">New</a> | <a href="#" id="load-project">Load</a> |<a href="help.html">Help</a></span>
+      <span class="options"><a href="index.html">Home</a> | <a href="project.html">Project</a> | <a href="#" id="load-project">Load</a>
+        |<a href="help.html">Help</a></span>
       <h3>Output</h3>
       <canvas id="turtle-canvas" height="455" width="630"></canvas>
     </div>
+    <a href="#" id="clear-canvas" class="clear">Clear Canvas</a>
     <div class="resources">
       <img src="static/img/turtle.png" id="turtle" class="hidden">
     </div>
@@ -29,7 +31,7 @@
     <input type="checkbox" name="error" id="d-error" checked="checked"><label for="d-error">Errors</label>
     <input type="checkbox" name="warn" id="d-warn" checked="checked"><label for="d-warn">Warnings</label>
     <input type="checkbox" name="system" id="d-system" checked="checked"><label for="d-system">System</label>
-    <input type="checkbox" name="debug" id="d-debug" checked="checked"><label for="d-debug">Debug</label>
+    <input type="checkbox" name="debug" id="d-debug" label for="d-debug">Debug</label>
     <div id="debugger" class="box">
     </div>
     </div>
@@ -52,10 +54,12 @@
       <input type="button" name="stoptop" class="button stop" value="Pause" disabled="disabled" onsubmit="return false;">
       <input type="button" name="runtop" class="button run" value="Run">
       <div id="highlighter">&nbsp;</div>
-      <textarea name="source" id="source"></textarea><br>
+      <textarea name="source" id="source"></textarea>
+      <a href="#" id="clear-source" class="clear">Clear Source</a>
+      <br>
       <input type="button" name="stopbottom" class="button stop" value="Pause" disabled="disabled" onsubmit="return false;">
       <input type="button" name="runbottom" class="button run" value="Run">
-      <input type="checkbox" name="hlight" id="d-hlight" checked="checked"><label for="d-hlight">Line Highlighter</label>
+      <input type="checkbox" name="hlight" id="d-hlight" label for="d-hlight">Line Highlighter</label>
       </form>
     </div>
   </div>
@@ -67,8 +71,9 @@
         </div>
     </div>
   <footer>
-     Produced in 2012 by Patrick Simpson for <a href="http://www.cs.franklin.edu/" target="_blank" title="(Opens a new window)">Franklin University</a> CS Capstone. There is no Copyright. 
+     Produced in 2012 by Patrick Simpson. There is no Copyright. Source: <a href="https://github.com/patricksimpson/weblogo">Weblogo</a>
   </footer>
+
   <script>window.jQuery || document.write('<script src="vendors/jquery-1.7.1.min.js"><\/script>')</script>
   <script src="vendors/paper.js"></script>
   <script type="text/javascript" src="static/js/jqmodal.js"></script>

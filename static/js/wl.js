@@ -71,15 +71,35 @@ var wl = {
 };
 wl.init = function(){
     wl.ui = new wl.UI();
-    
+    var code;
+    code = localStorage["mycode"];
+    if(code != ""){
+      $(wl.ui.ele.source).val(localStorage["mycode"]);
+    }
     $("#project-name").val(wl.projectname);
     $("title").text("Weblogo: " + wl.projectname);
+    $(wl.ui.ele.source).on("keyup", function(){
+      localStorage["mycode"] = $(wl.ui.ele.source).val();
+    });
     $(wl.ui.ele.run).click(function(){
       $("#loading").show();
       setTimeout("wl.run()", 250); //Run in .5 seconds.
     });
     $(wl.ui.ele.stop).click(function(){
       wl.stop();
+    });
+    $("#clear-source").on("click", function(){
+      localStorage["mycode"] = "";
+      $(wl.ui.ele.source).val("");
+      return false;
+    });
+    $("#clear-canvas").on("click", function(){
+      var tempir = null;
+      source = "clearscreen \nbkg white \nsetx " + wl.ui.midx + " \nsety " + wl.ui.midy;
+      localStorage["mycode"] = $(wl.ui.ele.source).val();
+      $(wl.ui.ele.source).val(source);
+      wl.run();
+      $(wl.ui.ele.source).val(localStorage["mycode"]);
     });
     $("#d-error").change(function(){
        if($(this).attr("checked") === undefined){
@@ -204,6 +224,7 @@ wl.run = function(){
   wl.startd = new Date();
   wl.ui.addMessage("Starting new compile at: " + wl.startd.getHours() + ":" + wl.startd.getMinutes() + ":"+ wl.startd.getSeconds()+ ", "+ wl.startd.getMilliseconds() + " ms");      
   source = $(wl.ui.ele.source).val();
+  source = wl.fixUgly(source);
   compiler = new wl.Parser();
   commands = compiler.compile(source);
   if(!commands || commands.length < 1){
@@ -250,6 +271,23 @@ wl.completeRun = function(){
   else{
     wl.ui.addDebug("Waiting for command.");    
   }
+}
+wl.fixUgly = function (source) {
+  var lines = source.split("\n");
+  var clean = "";
+  for(var _i = 0; _i < lines.length; ++_i){
+    line = lines[_i];
+    line = trimComments(line);
+    line = fixBracketSpaces(line);
+    line = fixMathOps(line);
+    line = fixExpress(line);
+    line = trimMe(line);
+    if(clean != ""){
+      clean = clean + "\n";
+    }
+    clean = clean + line;
+  }
+  return clean;
 }
 wl.pausecomp = function (ms) {
 ms += new Date().getTime();
@@ -306,3 +344,101 @@ function get_cookies_array() {
     return cookies;
    
 }
+
+function trimMe (str) {
+    str = str.replace(/^\s+/, '');
+    for (var i = str.length - 1; i >= 0; i--) {
+        if (/\S/.test(str.charAt(i))) {
+            str = str.substring(0, i + 1);
+            break;
+        }
+    }
+    return str;
+}
+
+function trimComments (str) {
+  str = str.replace(/;.+/, '');
+  return str;
+}
+
+function fixBracketSpaces( str ){
+  str = str.replace(/\[([^\s])/, function(str, group1){
+    return '[ ' + group1;
+  });
+  str = str.replace(/([^\s])\]/, function(str, group1, group2){
+    return group1 + ' ]';
+  });
+    str = str.replace(/([^\s])\[/, function(str, group1){
+    return group1 + ' [';
+  });
+  str = str.replace(/\]([^\s])/, function(str, group1, group2){
+    return '] ' +group1;
+  });
+
+  return str;
+}
+function fixMathOps( str ) {
+  //fix math
+  str = str.replace(/\s?\+\s?/, '+');
+  str = str.replace(/\s?\-\s?/, '-');
+  str =  str.replace(/\s?\*\s?/, '*');
+  str = str.replace(/\s?\\\s?/, '\\');
+  return str;
+}
+
+function fixExpress( str ){
+  str = str.replace(/([^\s])?\>([^\s])?/, function(str, group1, group2){
+    if(typeof group1 != "undefined" && typeof group2 != "undefined"){
+      return '' + group1 + ' ' + '>' + ' ' + group2;
+    }
+    if(typeof group1 != "undefined"){
+      return '' + group1 + ' ' + '>';
+    }
+    if(typeof group2 != "undefined"){
+      return '' + '>' + ' ' + group2;
+    }
+    return '>';
+  });
+  str = str.replace(/([^\s])?\<([^\s])?/, function(str, group1, group2){
+    if(typeof group1 != "undefined" && typeof group2 != "undefined"){
+      return '' + group1 + ' ' + '<' + ' ' + group2;
+    }
+    if(typeof group1 != "undefined"){
+      return '' + group1 + ' ' + '<';
+    }
+    if(typeof group2 != "undefined"){
+      return '' + '<' + ' ' + group2;
+    }
+    return '<';
+  });
+
+  str = str.replace(/([^\s])?\=\=([^\s])?/, function(str, group1, group2){
+    if(typeof group1 != "undefined" && typeof group2 != "undefined"){
+      return '' + group1 + ' ' + '==' + ' ' + group2;
+    }
+    if(typeof group1 != "undefined"){
+      return '' + group1 + ' ' + '==';
+    }
+    if(typeof group2 != "undefined"){
+      return '' + '==' + ' ' + group2;
+    }
+    return '==';
+  });
+
+  str = str.replace(/([^\s])?\!\=([^\s])?/, function(str, group1, group2){
+    if(typeof group1 != "undefined" && typeof group2 != "undefined"){
+      return '' + group1 + ' ' + '!=' + ' ' + group2;
+    }
+    if(typeof group1 != "undefined"){
+      return '' + group1 + ' ' + '!=';
+    }
+    if(typeof group2 != "undefined"){
+      return '' + '!=' + ' ' + group2;
+    }
+    return '!=';
+  });
+
+
+  return str;
+}
+

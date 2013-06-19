@@ -83,6 +83,9 @@ h3{
     border:1px solid #ccc;
     margin: .5em 0;
 }
+.clear{
+  float: right;
+}
 #debugger{
   position: absolute;
   bottom: 0px;
