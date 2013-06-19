@@ -126,6 +126,35 @@
 </ul>
 </li>
 </ul><h4>
+<a name="if-statements" class="anchor" href="#if-statements"><span class="octicon octicon-link"></span></a>If statements</h4>
+
+<ul>
+<li>if
+
+<ul>
+<li>If statements require a expression and a command bracket.</li>
+<li>if &amp;arg (expression) &amp;arg2 [commands]</li>
+</ul>
+</li>
+<li>Expressions 
+
+<ul>
+<li>Supported expressions are: &lt;, &gt;, ==, !=</li>
+</ul>
+</li>
+</ul><h5>
+<a name="example-code" class="anchor" href="#example-code"><span class="octicon octicon-link"></span></a>Example code</h5>
+
+<pre><code>if &nbsp;:size &gt; 30 [stop]
+
+if :size &lt; :othersize [ fd 20 rt 20 ]
+
+if 10 == :othersize [ bk 20 ]
+
+if :something != somethingelse [ penup hideturtle setx 200 ]
+</code></pre>
+
+<h4>
 <a name="looping" class="anchor" href="#looping"><span class="octicon octicon-link"></span></a>Looping</h4>
 
 <ul>
@@ -138,7 +167,7 @@
 </ul>
 </li>
 </ul><h5>
-<a name="example-code" class="anchor" href="#example-code"><span class="octicon octicon-link"></span></a>Example Code</h5>
+<a name="example-code-1" class="anchor" href="#example-code-1"><span class="octicon octicon-link"></span></a>Example Code</h5>
 
 <pre><code>rep 10 [ fd 5 ] 
 </code></pre>
@@ -160,7 +189,7 @@
 </ul>
 </li>
 </ul><h5>
-<a name="example-code-1" class="anchor" href="#example-code-1"><span class="octicon octicon-link"></span></a>Example Code</h5>
+<a name="example-code-2" class="anchor" href="#example-code-2"><span class="octicon octicon-link"></span></a>Example Code</h5>
 
 <pre><code>to someFunction 
  fd 1
@@ -191,10 +220,21 @@ end
 </ul>
 </li>
 </ul><h5>
-<a name="example-code-2" class="anchor" href="#example-code-2"><span class="octicon octicon-link"></span></a>Example Code</h5>
+<a name="example-code-3" class="anchor" href="#example-code-3"><span class="octicon octicon-link"></span></a>Example Code</h5>
 
 <pre><code>:somevar 5
-</code></pre></article> 
+</code></pre>
+
+<h4>
+<a name="comments" class="anchor" href="#comments"><span class="octicon octicon-link"></span></a>Comments</h4>
+
+<ul>
+<li>";"</li>
+<li>  - Just a semicolon, followed by comments. Only works per line.</li>
+</ul><h5>
+<a name="example-code-4" class="anchor" href="#example-code-4"><span class="octicon octicon-link"></span></a>Example Code</h5>
+
+<p>; This is a comment</p></article> 
             </div>
   </div>
   <footer>
