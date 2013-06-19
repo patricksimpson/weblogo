@@ -228,8 +228,7 @@ wl.run = function(){
   compiler = new wl.Parser();
   commands = compiler.compile(source);
   if(!commands || commands.length < 1){
-     errors = compiler.getErrors();
-     errors.print();
+    wl.ui.printError("Failed to compile, please fix your syntax!");
   }
   wl.ir = new wl.Interpreter(wl.ui);
   wl.ir.init(commands);
