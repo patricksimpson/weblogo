@@ -14,10 +14,11 @@
     </header>
     <nav>
     <a href="index.html">Home</a> |
-    <a href="project.html">New Project</a> |
+    <a href="project.html">Project</a> |
     <a href="help.html" class="active">Help</a>
     </nav>
     <div class="content">
+    See <a href="example.html">Example</a> Code
         <h2>Help</h2>
         <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h3>
 <a name="supported-commands" class="anchor" href="#supported-commands"><span class="octicon octicon-link"></span></a>Supported Commands</h3>
@@ -194,37 +195,7 @@ end
 
 <pre><code>:somevar 5
 </code></pre></article> 
-        
-        <h3>Example code:</h3>
-        <p><textarea cols="30" rows="35">clearscreen
-setbackground black
-hideturtle
-
-setpencolor green
-setx 350
-sety 440
-forward 200
-
-:flowersize 50
-
-to square :n
-repeat 4 [ forward :n right 90 ]
-end
-
-to flower :n
-repeat 36 [ right 10 square :n ]
-end
-
-setpencolor red
-flower :flowersize
-
-penup
-setx 330
-sety 30
-
-showturtle
- </textarea></p>
-    </div>
+            </div>
   </div>
   <footer>
      Produced in 2012 by Patrick Simpson for <a href="http://www.cs.franklin.edu/" target="_blank" title="(Opens a new window)">Franklin University</a> CS Capstone. There is no Copyright. 

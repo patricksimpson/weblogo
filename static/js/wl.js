@@ -71,15 +71,35 @@ var wl = {
 };
 wl.init = function(){
     wl.ui = new wl.UI();
-    
+    var code;
+    code = localStorage["mycode"];
+    if(code != ""){
+      $(wl.ui.ele.source).val(localStorage["mycode"]);
+    }
     $("#project-name").val(wl.projectname);
     $("title").text("Weblogo: " + wl.projectname);
+    $(wl.ui.ele.source).on("keyup", function(){
+      localStorage["mycode"] = $(wl.ui.ele.source).val();
+    });
     $(wl.ui.ele.run).click(function(){
       $("#loading").show();
       setTimeout("wl.run()", 250); //Run in .5 seconds.
     });
     $(wl.ui.ele.stop).click(function(){
       wl.stop();
+    });
+    $("#clear-source").on("click", function(){
+      localStorage["mycode"] = "";
+      $(wl.ui.ele.source).val("");
+      return false;
+    });
+    $("#clear-canvas").on("click", function(){
+      var tempir = null;
+      source = "clearscreen \nbkg white \nsetx " + wl.ui.midx + " \nsety " + wl.ui.midy;
+      localStorage["mycode"] = $(wl.ui.ele.source).val();
+      $(wl.ui.ele.source).val(source);
+      wl.run();
+      $(wl.ui.ele.source).val(localStorage["mycode"]);
     });
     $("#d-error").change(function(){
        if($(this).attr("checked") === undefined){

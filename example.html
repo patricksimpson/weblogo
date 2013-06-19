@@ -13,18 +13,42 @@
     <h1 class="main">WebLogo</h1>
     </header>
     <nav>
-    <a href="index.html" class="active">Home</a> |
+    <a href="index.html">Home</a> |
     <a href="project.html">Project</a> |
-    <a href="help.html">Help</a>
+    <a href="help.html" class="active">Help</a>
     </nav>
     <div class="content">
-        <h3>Home</h3>
-        <p>Welcome to the home page for the WebLogo project.</p>
-        <p>Let me take a moment to explain what's going on here...</p>
-        <p>This project is an small implementation of the Logo language for turtle graphics. The help page will provide help with the supported syntax and semantics. If you would like more information Logo please see the wiki page.</p>
-        <p>&nbsp;</p>
-        <p>This project was produced by Patrick Simpson using JavaScript, HTML5 (Canvas), jQuery, and Paper.js</p>
-        <p>NOTE: This project will not work in IE 8 and below. If you would like to use this web application, please use a modern standards based browser. (Chrome, Firefox, Safari, IE9+ etc.)</p>
+      See <a href="help.html">Supported Commands</a>
+    <h2>Help</h2>
+    <h3>Example code:</h3>
+<p><textarea cols="30" rows="35">clearscreen
+setbackground black
+hideturtle
+
+setpencolor green
+setx 350
+sety 440
+forward 200
+
+:flowersize 50
+
+to square :n
+repeat 4 [ forward :n right 90 ]
+end
+
+to flower :n
+repeat 36 [ right 10 square :n ]
+end
+
+setpencolor red
+flower :flowersize
+
+penup
+setx 330
+sety 30
+
+showturtle
+ </textarea></p>
     </div>
   </div>
   <footer>
@@ -34,3 +58,4 @@
   <script type="text/javascript" src="parser.js"></script>
   </body>
 </html>
+
