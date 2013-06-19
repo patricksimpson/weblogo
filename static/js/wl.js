@@ -227,8 +227,11 @@ wl.run = function(){
   source = wl.fixUgly(source);
   compiler = new wl.Parser();
   commands = compiler.compile(source);
-  if(!commands || commands.length < 1){
+  if(!commands){
     wl.ui.printError("Failed to compile, please fix your syntax!");
+  }
+  if( commands.length < 1 ){
+    wl.ui.addWarning("No work to do... No commands called.");
   }
   wl.ir = new wl.Interpreter(wl.ui);
   wl.ir.init(commands);
