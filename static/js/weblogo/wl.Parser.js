@@ -88,8 +88,10 @@ wl.Parser.prototype.compile = function(source, so) {
         //this.cLine = this.getLineNumber(lines[i]);
         if(lines[i].length > 0){
             cols = lines[i].split(" ");
+
             //console.log(scopename + " - i : " + i + " line " + lines[i]);
             for( j = 0; j < cols.length; j++) {
+                if(cols[j] === ""){ continue; }
                 if(!nflag && !cflag && !sflag && !vflag && !loopflag && !loopcap && !funcap && !funcheck) {
                     if(!loopflag && !loopcap && !funcap) {
                         if(command.name !== "repeat" && command.name !== "rep" && command.name !== "function") {
@@ -238,6 +240,9 @@ wl.Parser.prototype.compile = function(source, so) {
                                 nflag = false;
                                 lineref = false;
                             break;
+                            case "spacechar":
+                              wl.ui.addWarning("Extra white space on line " + i + 1);
+                            break; 
                             default:
                                 wl.ui.printError("Invalid command @line " + (i + 1) + "\"" + col + "\"");
                                 return false;
@@ -469,9 +474,10 @@ wl.Parser.prototype.compile = function(source, so) {
 wl.Parser.prototype.whichCommand = function(c) {
     var i;
     c = c.toLowerCase();
+
     if(c === "") {
         wl.ui.printError("Parse error: Invalid white space");
-        return false;
+        return "spacechar";
     }
     for( i = 0; i < wl.lang.number.length; i++) {
         if(wl.lang.number[i] === c) {
