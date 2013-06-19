@@ -54,7 +54,7 @@ wl.Parser.prototype.compile = function(source, so) {
     if(this.recursion%25 == 0){
         wl.ui.addWarning("Recursion depth: " + this.recursion);
     }
-    if(this.recursion > 400){
+    if(this.recursion > 10000){
         wl.ui.printError("Error: Recursion depth: " + this.recursion);
         wl.ui.printError("Too much recursion! Please check your syntax.");
         return false; 
