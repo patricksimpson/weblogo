@@ -19,7 +19,8 @@
     </nav>
     <div class="content">
     See <a href="example.html">Example</a> Code
-        <h2>Help</h2>
+    <h2>Help</h2>
+    <h4>Note: Nested looping is not yet supported... but I am planning on adding it soon (as well as other things)!</h4>
        <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h3>
 <a name="supported-commands" class="anchor" href="#supported-commands"><span class="octicon octicon-link"></span></a>Supported Commands</h3>
 
@@ -168,7 +169,31 @@ if 10 == :othersize [ bk 20 ]
 
 if :something != somethingelse [ penup hideturtle setx 200 ]
 </code></pre>
+<h4>
+<a name="looping" class="anchor" href="#looping"><span class="octicon octicon-link"></span></a>Math Operators</h4>
+<ul>
+<li>
+<em>+</em> or <em>-</em> or <em>/</em>  or <em>*</em>
+</li>
 
+<ul>
+<li> Currently basic math is supported.</li>
+</ul>
+</li>
+</ul><h5>
+<a name="example-code-1" class="anchor" href="#example-code-1"><span class="octicon octicon-link"></span></a>Example Code</h5>
+
+<pre><code>:somevar + 2 
+; adds 2 to somevar
+
+:n*2 
+; multiplys n by 2
+
+:n/2 
+; divides n by 2
+
+2 - :n 
+; subtracts 2 by n </code></pre>
 <h4>
 <a name="looping" class="anchor" href="#looping"><span class="octicon octicon-link"></span></a>Looping</h4>
 
