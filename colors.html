@@ -17,50 +17,26 @@
     <a href="project.html">Project</a> |
     <a href="help.html" class="active">Help</a>
     </nav>
-    <div class="content example">
+    <div class="content">
       See <a href="help.html">Supported Commands</a>
     <h2>Help</h2>
-    <h3>Example code:</h3>
-<p><textarea cols="30" rows="35">clearscreen
-setbackground black
-hideturtle
-
-setpencolor green
-setx 350
-sety 440
-forward 200
-
-:flowersize 50
-
-to square :n
-repeat 4 [ forward :n right 90 ]
-end
-
-to flower :n
-repeat 36 [ right 10 square :n ]
-end
-
-setpencolor red
-flower :flowersize
-
-penup
-setx 330
-sety 30
-
-showturtle
- </textarea></p>
- <p><textarea cols="30" rows="35">
-to nested
-repeat 90 [fd 2 rt 2] 
-rt 90 
-end
-
-to nest :n
-rt 45 repeat :n [ nested ]
-end
-
-repeat 8 [ nest 2 ]
-  </textarea></p>
+    <h3>Supported Colors:</h3>
+    <p>
+    Any Hex Color Should Work!</p>
+    <a href="http://www.color-hex.com/">Hex Colors</a>
+    <p>Or you can use the following white listed colors.</p>
+    <p><pre>
+      black
+      white
+      red
+      blue
+      green
+      grey
+      magenta
+      orange
+      pink
+      yellow
+  </pre></p>
     </div>
   </div>
   <footer>
@@ -81,4 +57,5 @@ repeat 8 [ nest 2 ]
 </script>
   </body>
 </html>
+
 

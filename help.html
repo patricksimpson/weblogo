@@ -20,44 +20,50 @@
     <div class="content">
     See <a href="example.html">Example</a> Code
         <h2>Help</h2>
-        <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h3>
+       <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h3>
 <a name="supported-commands" class="anchor" href="#supported-commands"><span class="octicon octicon-link"></span></a>Supported Commands</h3>
 
 <h4>
 <a name="movement" class="anchor" href="#movement"><span class="octicon octicon-link"></span></a>Movement</h4>
 
 <ul>
-<li>forward or fd
+<li>
+<em>forward</em> or <em>fd</em>
 
 <ul>
 <li>Moves the turtle (n) spaces forward, defaults to 1.</li>
 </ul>
 </li>
-<li>back or bk 
+<li>
+<em>back</em> or <em>bk</em> 
 
 <ul>
 <li>Moves the turtle (n) spaces backward, defaults to 1.</li>
 </ul>
 </li>
-<li>right or rt 
+<li>
+<em>right</em> or <em>rt</em> 
 
 <ul>
 <li>Moves the turtle (n) spaces right, defaults to 1.</li>
 </ul>
 </li>
-<li>left or lt 
+<li>
+<em>left</em> or <em>lt</em>
 
 <ul>
 <li>Moves the turtle (n) spaces left, defaults to 1.</li>
 </ul>
 </li>
-<li>setx
+<li>
+<em>setx</em>
 
 <ul>
 <li>Moves the turtle to the x coordinate.</li>
 </ul>
 </li>
-<li>sety
+<li>
+<em>sety</em>
 
 <ul>
 <li>Moves the turtle to the y coordinate.</li>
@@ -67,33 +73,38 @@
 <a name="drawing" class="anchor" href="#drawing"><span class="octicon octicon-link"></span></a>Drawing</h4>
 
 <ul>
-<li>setpencolor or pc
+<li>
+<em>setpencolor</em> or <em>pc</em>
 
 <ul>
 <li>Sets the pen color to the HEX color value or the supported colors.</li>
-<li>Supported Colors <a href="http://www.computerhope.com/htmcolor.htm">HTML COLORS</a>
+<li>Supported Colors <a href="colors.html">HTML COLORS</a>
 </li>
 </ul>
 </li>
-<li>setbackground or bkg
+<li>
+<em>setbackground</em> or <em>bkg</em>
 
 <ul>
 <li>Sets the pen color to the HEX color value or the supported colors.</li>
 </ul>
 </li>
-<li>penup or pu
+<li>
+<em>penup</em> or <em>pu</em>
 
 <ul>
 <li>Drawing disabled, movement will not draw. </li>
 </ul>
 </li>
-<li>pendown or pd
+<li>
+<em>pendown</em> or <em>pd</em>
 
 <ul>
 <li>Drawning enabled, movement will draw.</li>
 </ul>
 </li>
-<li>clearscreen or cs
+<li>
+<em>clearscreen</em> or <em>cs</em>
 
 <ul>
 <li>Clear the canvas.</li>
@@ -103,13 +114,15 @@
 <a name="turtle" class="anchor" href="#turtle"><span class="octicon octicon-link"></span></a>Turtle</h4>
 
 <ul>
-<li>showturtle or st
+<li>
+<em>showturtle</em> or <em>st</em>
 
 <ul>
 <li>Shows the turtle icon on the canvas.</li>
 </ul>
 </li>
-<li>hideturtle or ht
+<li>
+<em>hideturtle</em> or <em>ht</em>
 
 <ul>
 <li>Hides the turtle icon on the canvas.</li>
@@ -119,7 +132,8 @@
 <a name="processing" class="anchor" href="#processing"><span class="octicon octicon-link"></span></a>Processing</h4>
 
 <ul>
-<li>stop
+<li>
+<em>stop</em>
 
 <ul>
 <li>Program halt.</li>
@@ -129,7 +143,8 @@
 <a name="if-statements" class="anchor" href="#if-statements"><span class="octicon octicon-link"></span></a>If statements</h4>
 
 <ul>
-<li>if
+<li>
+<em>if</em>
 
 <ul>
 <li>If statements require a expression and a command bracket.</li>
@@ -158,9 +173,13 @@ if :something != somethingelse [ penup hideturtle setx 200 ]
 <a name="looping" class="anchor" href="#looping"><span class="octicon octicon-link"></span></a>Looping</h4>
 
 <ul>
-<li>repeat or rep</li>
-<li>[  (Repeat block start)</li>
-<li>] (Repeat block end) 
+<li>
+<em>repeat</em> or <em>rep</em>
+</li>
+<li>
+<em>[</em>  (Repeat block start)</li>
+<li>
+<em>]</em> (Repeat block end) 
 
 <ul>
 <li>You must have 1 space after the [ and before the ]. </li>
@@ -176,13 +195,15 @@ if :something != somethingelse [ penup hideturtle setx 200 ]
 <a name="functions" class="anchor" href="#functions"><span class="octicon octicon-link"></span></a>Functions</h4>
 
 <ul>
-<li>to
+<li>
+<em>to</em>
 
 <ul>
 <li>start of a function block</li>
 </ul>
 </li>
-<li>end 
+<li>
+<em>end</em>
 
 <ul>
 <li>indicates the end of a function block</li>
@@ -196,9 +217,8 @@ if :something != somethingelse [ penup hideturtle setx 200 ]
 end
 </code></pre>
 
-<p>someFunction
-(Calls function, simple, no arguments passed in)</p>
-
+<p><pre><code>someFunction ;Calls function, simple, no arguments passed in</p>
+</code></pre>
 <p>OR</p>
 
 <pre><code>to someFunctionTwo :n
@@ -206,14 +226,16 @@ end
 end
 </code></pre>
 
-<p>someFunctionTwo 2
-(Calls function, passes in 2 for the :n arguments.)</p>
+<p><pre><code>someFunctionTwo 2
+;Calls function, passes in 2 for the :n arguments.</code></pre>
+</p>
 
 <h4>
 <a name="variables" class="anchor" href="#variables"><span class="octicon octicon-link"></span></a>Variables</h4>
 
 <ul>
-<li>":"
+<li>
+<em>:</em>
 
 <ul>
 <li>Just a colon, followed by the name of the variable, followed by the value.</li>
@@ -229,16 +251,18 @@ end
 <a name="comments" class="anchor" href="#comments"><span class="octicon octicon-link"></span></a>Comments</h4>
 
 <ul>
-<li>";"</li>
+<li><em>;</em></li>
 <li>  - Just a semicolon, followed by comments. Only works per line.</li>
 </ul><h5>
 <a name="example-code-4" class="anchor" href="#example-code-4"><span class="octicon octicon-link"></span></a>Example Code</h5>
 
-<p>; This is a comment</p></article> 
+<p><pre><code>; This is a comment</code></pre>
+</p></article> 
             </div>
   </div>
   <footer>
-     Produced in 2012 by Patrick Simpson. There is no Copyright. Source: <a href="https://github.com/patricksimpson/weblogo">Weblogo</a>
+2012-2013 by <a href="mailto:weblogoapp@gmail.com">Patrick Simpson</a>. There is no Copyright. Source: <a href="https://github.com/patricksimpson/weblogo">Weblogo</a>
+
   </footer>
 
   <script type="text/javascript" src="jquery.js"></script>
