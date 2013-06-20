@@ -18,10 +18,12 @@ wl.Interpreter = function(){
   this.depth = 0;
   this.commandStack = [];
   this.lastLine = -1;
+  this.commandLen = 0;
 }
 wl.Interpreter.prototype.init = function(commands){
     var speed, command;
-    //debugger;
+    this.commandLen = commands.length;
+
     speed = wl.ui.getSpeed();
     if(speed > 0 || speed < 0){
         this.processing = true;
@@ -40,9 +42,10 @@ wl.Interpreter.prototype.init = function(commands){
     }else{
         this.processCommands(commands);          
     }
-    if(this.commandStack.length > 0 && this.depth === 0){
+    this.commandLen = this.commandStack.length;
+    if(this.commandLen > 0 && this.depth === 0){
         //Process stack
-        wl.ui.addMessage('Delay commands. This will take about '+ (((this.commandStack.length * speed)/1000) * 5) + ' seconds to complete.');
+        wl.ui.addMessage('Delay commands. This will take '+ (((this.commandStack.length * speed)/1000) * 10) + ' seconds or more to complete.');
         this.pauseCommand(0, speed);
     }
 }
@@ -50,15 +53,15 @@ wl.Interpreter.prototype.pauseCommand = function(i, speed){
     var next;
     next = i;
     if(wl.running){
-    wl.ui.addDebug('Processing command: ' + i + ' of ' + this.commandStack.length);
-    $(".complete").text(" " + Math.round((i/this.commandStack.length)*100) + "% complete");
+    wl.ui.addDebug('Processing command: ' + i + ' of ' + this.commandLen);
+    $(".complete").text(" " + Math.round((i/this.commandLen)*100) + "% complete");
     this.wait = false;
-    this.processCommand(this.commandStack[i]);
+    this.processCommand(this.commandStack.shift());
     next = (i*1) + 1;
-    if(next < this.commandStack.length){
+    if(next < this.commandLen){
       if(speed > 0){
         this.to = setTimeout('wl.ir.pauseCommand("' + next + '", "' + speed +'")', speed);
-        wl.ui.addDebug('Wait command : '+ this.commandStack[next].name + ' time: ' + speed);
+        wl.ui.addDebug('Wait command : '+ this.commandStack[0].name + ' time: ' + speed);
         this.wait = true;
         return false;
       }
@@ -78,7 +81,7 @@ wl.Interpreter.prototype.pauseCommand = function(i, speed){
           return false;
       }
    }
-   if(i == this.commandStack.length - 1){
+   if(i == this.commandLen - 1){
         this.processing = this.wait = false;
         wl.completeRun();
       }
@@ -171,4 +174,5 @@ wl.Interpreter.prototype.processCommand =  function(command){
        }
       this.err.addAll(this.draw.getErrors());
       this.err.print();
+    return true;
 }
