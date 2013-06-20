@@ -124,6 +124,10 @@ wl.Drawing.prototype.move = function(n, r){
     }
     p.add(new paper.Point(wl.ui.turtle.position.x, wl.ui.turtle.position.y));
     //this.ui.path.add(new paper.Point(this.turtle.position.x, this.turtle.position.y));
+    p = null;
+    delete p;
+    wl.ui.raster.postion = null;
+    delete wl.ui.raster.position;
     wl.ui.raster.position = new paper.Point(wl.ui.turtle.position.x, wl.ui.turtle.position.y);
     wl.ui.update();
 };

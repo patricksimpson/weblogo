@@ -83,6 +83,8 @@ wl.UI.prototype.getSpeed = function(){
 wl.UI.prototype.update = function(){
     var r = 0;
     this.raster.remove();
+    this.raster = null;
+    delete this.raster;
     this.raster = new paper.Raster(this.fields.turtle);
     //Figure out rotation based on 360 degrees.
     r = 360 - this.turtle.degree;
@@ -94,7 +96,7 @@ wl.UI.prototype.addDebug = function(txt, line){
   wl.count.db++;
   var addClass = "";
   if($("#d-debug").attr("checked") !== "checked"){
-    addClass = " hide";
+    return false;
   }
   if(line && line !== null && line !== ""){
     $(this.ele.debug).prepend("<p class='debug"+addClass+"'>(" + wl.count.db + ") Line: " + line + " - " + txt + "</p>");
